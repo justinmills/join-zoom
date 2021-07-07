@@ -13,7 +13,23 @@ google-auth-httplib2 = "*"
 google-auth-oauthlib = "*"
 
 [requires]
-python_version = "3.8.7"
+python_version = "3.9.2"
 
 [pipenv]
 allow_prereleases = true
+
+[scripts]
+list = "python ./zoom-alfred.py -c list -f alfred"
+
+# The following are for testing various edge cases. These just happen to be
+# times on my calendar when I have meetings that trigger the various edge cases
+# I want to test.
+#
+# Multiple meetings (one ending at 2:05 and another starting at 2:00)
+list_options = "python ./zoom-alfred.py -c list -f alfred -n 2021-07-07T18:01:00.000000+00:00"
+# Only one choice of meetings to join
+list_one_choice = "python ./zoom-alfred.py -c list -f alfred -n 2021-07-06T16:03:00.000000-04:00"
+# One in progress and another one starting immediately after
+list_join_next = "python ./zoom-alfred.py -c list -f alfred -n 2021-07-06T10:58:00.000000-04:00"
+# No meetings to join
+list_no_options = "python ./zoom-alfred.py -c list -f alfred -n 2021-07-06T17:03:00.000000-04:00"
