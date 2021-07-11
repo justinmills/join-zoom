@@ -9,6 +9,8 @@ mypy = "*"
 flake8 = "*"
 pytest = "*"
 flake8-black = "*"
+pytest-cov = "*"
+pytest-xdist = "*"
 
 [packages]
 google-api-python-client = "*"
@@ -35,3 +37,7 @@ list_one_choice = "python ./zoom-alfred.py -c list -f alfred -n 2021-07-06T16:03
 list_join_next = "python ./zoom-alfred.py -c list -f alfred -n 2021-07-06T10:58:00.000000-04:00"
 # No meetings to join
 list_no_options = "python ./zoom-alfred.py -c list -f alfred -n 2021-07-06T17:03:00.000000-04:00"
+# Code quality related shortcuts
+lint = "flake8"
+types = "mypy ."
+test = "pytest"
