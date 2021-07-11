@@ -1,0 +1,16 @@
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--verbose -ra --cov=. --cov-report=html --cov-report=xml --cov-fail-under=100"
+testpaths = [
+    "tests"
+]
+looponfailroots = [
+    "app",
+    "tests"
+]
+
+[tool.coverage.run]
+branch = true
+omit = [
+    "tests/*",
+]
