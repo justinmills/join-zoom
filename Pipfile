@@ -6,6 +6,9 @@ verify_ssl = true
 [dev-packages]
 black = "*"
 mypy = "*"
+flake8 = "*"
+pytest = "*"
+flake8-black = "*"
 
 [packages]
 google-api-python-client = "*"
@@ -20,7 +23,6 @@ allow_prereleases = true
 
 [scripts]
 list = "python ./zoom-alfred.py -c list -f alfred"
-
 # The following are for testing various edge cases. These just happen to be
 # times on my calendar when I have meetings that trigger the various edge cases
 # I want to test.
